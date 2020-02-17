@@ -17,10 +17,15 @@ CFLAGS	=	-W -Wextra -Wall
 
 CPPFLAGS=	-I./include/
 
+TEST	=	tests/unit_tests.c -I./include --coverage -lcriterion
+
 LDFLAGS	=	-lm
 
 all	:	$(OBJ)
 		gcc $(CFLAGS) -o $(NAME) $(SRC) $(CPPFLAGS) $(LDFLAGS)
+
+tests_run	:
+		gcc -o unit_tests src/*.c $(TEST)
 
 clean	:
 		rm -f $(OBJ)
@@ -30,4 +35,4 @@ fclean	:	clean
 
 re	:	fclean all
 
-.PHONY	:	all clean fclean re
+.PHONY	:	all tests_run clean fclean re
