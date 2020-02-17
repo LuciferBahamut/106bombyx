@@ -15,6 +15,7 @@
 #include <unistd.h>
 
 int start(int ac, char **av);
+void bombyx(int ac, char **av);
 
 int display_h(void);
 int error_handling(int ac, char **av);

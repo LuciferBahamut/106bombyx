@@ -18,6 +18,6 @@ int start(int ac, char **av)
         write(2, STR_HELP, strlen(STR_HELP));
         return (ERROR);
     }
-    printf("ok\n");
+    bombyx(ac, av);
     return (SUCCESS);
 }
