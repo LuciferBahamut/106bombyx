@@ -27,13 +27,18 @@ all	:	$(OBJ)
 		gcc $(CFLAGS) -o $(NAME) $(SRC) $(CPPFLAGS) $(LDFLAGS)
 
 tests_run	:
-		gcc -o unit_tests src/*.c $(TEST)
+		gcc -o unit_tests src/start.c             \
+                		src/bombyx.c            \
+                		src/display_h.c         \
+                		src/error_handling.c $(TEST)
 
 clean	:
 		rm -f $(OBJ)
 
 fclean	:	clean
 		rm -f $(NAME)
+		rm -f *.gcno
+		rm -f *.gcda
 
 re	:	fclean all
 
