@@ -9,5 +9,14 @@
 #define __BOMBYX_H__
 
 #include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+
+#define SUCCESS 0
+#define FAIL 84
+#define TRUE 1
+#define FALSE 0
 
 #endif
