@@ -9,7 +9,15 @@
 
 int start(int ac, char **av)
 {
-    if (strcmp(av[1], "-h") == SUCCESS && ac == 2)
-        display_h();
+    if (ac == 2 && strcmp(av[1], "-h") == SUCCESS)
+        return (display_h());
+    if (error_handling(ac, av) == ERROR)
+        return (ERROR);
+    if (atoi(av[2]) == 0) {
+        write(2, STR_ERROR_FIRST, strlen(STR_ERROR_FIRST));
+        write(2, STR_HELP, strlen(STR_HELP));
+        return (ERROR);
+    }
+    printf("ok\n");
     return (SUCCESS);
 }

@@ -7,9 +7,10 @@
 
 NAME	=	106bombyx
 
-SRC	=	src/main.c	\
-		src/start.c	\
-		src/display_h.c
+SRC	=	src/main.c		\
+		src/start.c		\
+		src/display_h.c		\
+		src/error_handling.c
 
 OBJ	=	$(SRC:.c=.o)
 
