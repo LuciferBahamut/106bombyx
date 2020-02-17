@@ -34,6 +34,8 @@ int error_handling(int ac, char **av);
 #define STR_ERROR_I "the initial generation value cannot "
 #define STR_ERROR_IBIS "be smaller than the final one (see with -h)\n"
 #define STR_ERROR_FIRST "the initial generation must be at least 1"
+#define STR_ERROR_N "the number of individual of the initial generation "
+#define STR_ERROR_NBIS "must be a positive integer"
 
 #define SUCCESS 0
 #define ERROR 84
