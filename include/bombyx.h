@@ -18,7 +18,7 @@ int start(int ac, char **av);
 void display_h(void);
 
 #define SUCCESS 0
-#define FAIL 84
+#define ERROR 84
 
 #define TRUE 1
 #define FALSE 0
