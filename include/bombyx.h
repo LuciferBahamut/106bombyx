@@ -16,6 +16,7 @@
 
 #define SUCCESS 0
 #define FAIL 84
+
 #define TRUE 1
 #define FALSE 0
 
