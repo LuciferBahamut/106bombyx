@@ -7,15 +7,39 @@
 
 #include "bombyx.h"
 
-void growth_rate(char **av)
+void generations(char **av)
 {
     float n = atof(av[1]);
+    int i0 = atoi(av[2]);
+    int i1 = atoi(av[3]);
+    float xi = 0;
+    float xn = 0;
+    int u = 0;
+
+    for (float k = 1.00; k != 4; k += 0.01, u = (int) k) {
+        xi = n;
+        if (u == 4)
+            break;
+        for (int i = 1; i != i0 + 1; i++) {
+            xn = k * xi * ((1000 - xi) / 1000);
+            xi = xn;
+        }
+        for (int z = i0; z != i1 + 1; z++) {
+            xn = k * xi * ((1000 - xi) / 1000);
+            xi = xn;
+            printf("%.2f %.2f\n", k, xn);
+        }
+    }
+}
+
+void growth_rate(char **av)
+{
     float k = atof(av[2]);
-    float xi = n;
-    float xn;
+    float xi = atof(av[1]);
+    float xn = 0;
     int i = 1;
 
-    printf("%d %2.f\n", i, n);
+    printf("%d %2.f\n", i, xi);
     for (int i = 2; i != 101; i++) {
         xn = k * xi * ((1000 - xi) / 1000);
         xi = xn;
@@ -27,6 +51,6 @@ void bombyx(int ac, char **av)
 {
     if (ac == 3)
         growth_rate(av);
-    // else
-    //    ;
+    else
+        generations(av);
 }
