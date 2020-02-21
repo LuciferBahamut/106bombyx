@@ -32,7 +32,7 @@ int error_handling(int ac, char **av);
 #define STR_ERROR_NBR "all arguments must be positive numbers"
 #define STR_ERROR_K "the growth rate must be a number between 1 and 4"
 #define STR_ERROR_I "the initial generation value cannot "
-#define STR_ERROR_IBIS "be smaller than the final one (see with -h)\n"
+#define STR_ERROR_IBIS "be smaller than the final one (try with -h)\n"
 #define STR_ERROR_FIRST "the initial generation must be at least 1"
 #define STR_ERROR_N "the number of individual of the initial generation "
 #define STR_ERROR_NBIS "must be a positive integer"
