@@ -7,6 +7,11 @@
 
 #include "bombyx.h"
 
+void write_error(char *str)
+{
+    write(2, str, strlen(str));
+}
+
 int check_i(int ac, char **av)
 {
     int i0 = atoi(av[2]);
@@ -17,14 +22,14 @@ int check_i(int ac, char **av)
             if ((av[i][j] >= '0' && av[i][j] <= '9'))
                 j++;
             else {
-                write(2, STR_ERROR_NBR, strlen(STR_ERROR_NBR));
-                write(2, STR_HELP, strlen(STR_HELP));
+                write_error(STR_ERROR_NBR);
+                write_error(STR_HELP);
                 return (ERROR);
             }
         }
     if (i0 > i1) {
-        write(2, STR_ERROR_I, strlen(STR_ERROR_I));
-        write(2, STR_ERROR_IBIS, strlen(STR_ERROR_IBIS));
+        write_error(STR_ERROR_I);
+        write_error(STR_ERROR_IBIS);
         return (ERROR);
     }
     return (SUCCESS);
@@ -39,14 +44,14 @@ int check_k(int ac, char **av)
             if ((av[i][j] >= '0' && av[i][j] <= '9') || av[i][j] == '.')
                 j++;
             else {
-                write(2, STR_ERROR_NBR, strlen(STR_ERROR_NBR));
-                write(2, STR_HELP, strlen(STR_HELP));
+                write_error(STR_ERROR_NBR);
+                write_error(STR_HELP);
                 return (ERROR);
             }
         }
     if (k < 1 || k > 4) {
-        write(2, STR_ERROR_K, strlen(STR_ERROR_K));
-        write(2, STR_HELP, strlen(STR_HELP));
+        write_error(STR_ERROR_K);
+        write_error(STR_HELP);
         return (ERROR);
     }
     return (SUCCESS);
@@ -58,9 +63,9 @@ int check_first_arg(char *n)
         if (n[i] >= '0' && n[i] <= '9')
             i++;
         else {
-            write(2, STR_ERROR_N, strlen(STR_ERROR_N));
-            write(2, STR_ERROR_NBIS, strlen(STR_ERROR_NBIS));
-            write(2, STR_HELP, strlen(STR_HELP));
+            write_error(STR_ERROR_N);
+            write_error(STR_ERROR_NBIS);
+            write_error(STR_HELP);
             return (ERROR);
         }
     }
