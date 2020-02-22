@@ -9,14 +9,14 @@
 
 void generations(char **av)
 {
-    float n = atof(av[1]);
+    double n = atof(av[1]);
     int i0 = atoi(av[2]);
     int i1 = atoi(av[3]);
-    float xi = 0;
-    float xn = 0;
+    double xi = 0;
+    double xn = 0;
     int u = 0;
 
-    for (float k = 1.00; k != 4; k += 0.01, u = (int) k) {
+    for (double k = 1.00; k != 4; k += 0.01, u = (int) k) {
         xi = n;
         if (u == 4)
             break;
@@ -34,12 +34,12 @@ void generations(char **av)
 
 void growth_rate(char **av)
 {
-    float k = atof(av[2]);
-    float xi = atof(av[1]);
-    float xn = 0;
+    double k = atof(av[2]);
+    double xi = atof(av[1]);
+    double xn = 0;
     int i = 1;
 
-    printf("%d %2.f\n", i, xi);
+    printf("%d %.2f\n", i, xi);
     for (int i = 2; i != 101; i++) {
         xn = k * xi * ((1000 - xi) / 1000);
         xi = xn;
