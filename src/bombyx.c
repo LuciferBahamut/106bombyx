@@ -16,10 +16,8 @@ void generations(char **av)
     double xn = 0;
     int u = 0;
 
-    for (double k = 1.00; k != 4; k += 0.01, u = (int) k) {
+    for (double k = 1.00; u != 4; k += 0.01, u = (int) k) {
         xi = n;
-        if (u == 4)
-            break;
         for (int i = 1; i != i0 + 1; i++) {
             xn = k * xi * ((1000 - xi) / 1000);
             xi = xn;
