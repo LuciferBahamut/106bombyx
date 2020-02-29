@@ -18,13 +18,13 @@ void generations(char **av, int u)
     for (double k = 1.00; u != 4; k += 0.01, u = (int) k) {
         xi = n;
         for (int i = 1; i != i0 + 1; i++) {
-            xn = k * xi * (1000.0f - xi) / 1000.0f;
+            xn = k * xi * ((1000.0f - xi) / 1000.0f);
             xi = xn;
         }
         for (int z = i0; z != i1 + 1; z++) {
-            xn = k * xi * (1000.0f - xi) / 1000.0f;
-            xi = xn;
             printf("%.2f %.2f\n", k, xn);
+            xn = k * xi * ((1000.0f - xi) / 1000.0f);
+            xi = xn;
         }
     }
 }
@@ -38,7 +38,7 @@ void growth_rate(char **av)
 
     printf("%d %.2f\n", i, xi);
     for (int i = 2; i != 101; i++) {
-        xn = k * xi * (1000.0f - xi) / 1000.0f;
+        xn = k * xi * ((1000.0f - xi) / 1000.0f);
         xi = xn;
         printf("%d %.2f\n", i, xn);
     }
