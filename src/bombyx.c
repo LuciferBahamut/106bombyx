@@ -38,7 +38,7 @@ void growth_rate(char **av)
 
     printf("%d %.2f\n", i, xi);
     for (int i = 2; i != 101; i++) {
-        xn = k * xi * ((1000 - xi) / 1000);
+        xn = k * xi * (1000 - xi) / 1000;
         xi = xn;
         printf("%d %.2f\n", i, xn);
     }
