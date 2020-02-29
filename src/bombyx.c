@@ -17,7 +17,7 @@ void generations(char **av, int u)
 
     for (double k = 1.00; u != 4; k += 0.01, u = (int) k) {
         xi = n;
-        for (int i = 1; i != i0 + 1; i++) {
+        for (int i = 1; i != i0; i++) {
             xn = k * xi * ((1000.0f - xi) / 1000.0f);
             xi = xn;
         }
