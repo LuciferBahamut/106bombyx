@@ -39,6 +39,7 @@ fclean	:	clean
 		rm -f $(NAME)
 		rm -f *.gcno
 		rm -f *.gcda
+		rm -f data
 
 re	:	fclean all
 
